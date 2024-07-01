@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "firstName": "Omi",
+    "lastName": "Raut",
+    "email": "24",
+    "createdAt": "2024-06-28T10:26:48.345Z",
+    "updatedAt": "2024-06-28T10:26:48.345Z"
+  },
+  {
+    "id": 2,
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "createdAt": "2024-06-29T06:46:40.183Z",
+    "updatedAt": "2024-06-29T06:46:40.183Z"
+  },
+  {
+    "id": 3,
+    "firstName": "Rithes",
+    "lastName": "Nakane",
+    "email": "riteshnakane@example.com",
+    "createdAt": "2024-06-29T06:48:48.626Z",
+    "updatedAt": "2024-06-29T06:48:48.626Z"
+  },
+  {
+    "id": 4,
+    "firstName": "Vishesh",
+    "lastName": "Gomutre",
+    "email": "visheshgomutre@example.com",
+    "createdAt": "2024-06-29T06:49:09.032Z",
+    "updatedAt": "2024-06-29T06:49:09.032Z"
+  },
+  {
+    "id": 5,
+    "firstName": "Rajesh",
+    "lastName": "nishane",
+    "email": "rajesh@example.com",
+    "createdAt": "2024-06-29T07:46:58.432Z",
+    "updatedAt": "2024-06-29T07:46:58.432Z"
+  }
+]
