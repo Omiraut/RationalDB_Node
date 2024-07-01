@@ -1,3 +1,4 @@
+const { where } = require("sequelize");
 const { User, Cart, CartItem, Product } = require("../models");
 
 const saveUser = async (req, res) => {
@@ -66,14 +67,19 @@ const getProductFromCart = async (req, res) => {
 };
 const updateProductQuantity = async (req, res) => {
   try {
-    const cartItem = await CartItem.findOne(
-      req.params.cartId,
-      req.params.productId
-    );
+    const cartItem = await CartItem.findOne({
+      where: {
+        cartId: req.params.cartId,
+        productId: req.params.productId,
+      },
+    });
 
     if (cartItem) {
-      const updatedCartItem = await cartItem.update(req.body);
-      res.status(200).json(updatedCartItem);
+      cartItem.quantity = req.body.quantity;
+      // const cartItem.quantity = req.body.quantity
+      console.log("Hellooooooooooooooooooooooo");
+      await cartItem.save();
+      res.status(200).json(cartItem);
     } else {
       console.log("Item not found with matching details");
     }
@@ -82,7 +88,24 @@ const updateProductQuantity = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
-const deleteProductFromCart = async (req, res) => {};
+const deleteProductFromCart = async (req, res) => {
+  try {
+    const cartItem = await CartItem.findOne({
+      where: {
+        cartId: req.params.cartId,
+        productId: req.params.productId,
+      },
+    });
+    if (cartItem) {
+      await cartItem.destroy();
+      res.status(200).send("Item Removed from Cart");
+    } else {
+      res.status(400).send("Item Does not Exist in cart");
+    }
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
 
 module.exports = {
   addProductToCart,

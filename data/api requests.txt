@@ -1,0 +1,9 @@
+--POST *    http://localhost:3001/user/                                 Create User
+--GET  *    http://localhost:3001/user/                                 Get Users
+--POST *    http://localhost:3001/user/{id}/cart                        Create Cart for user
+--POST *    http://localhost:3001/product/                              Create Product
+--GET  *    http://localhost:3001/product/                              Get Product
+--POST *    http://localhost:3001/cart/{cartId}/products                Add Product To Cart
+--GET  *    http://localhost:3001/cart/{cartId}/products                View Cart
+--PUT  *    http://localhost:3001/cart/{cartId}/products/{productId}    Update Cart
+--DELETE    http://localhost:3001/cart/{cartId}/products/{productId}    delete product from cart

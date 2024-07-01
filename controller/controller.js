@@ -22,7 +22,7 @@ const getProductFromCart = (req, res) => {
   service.getProductFromCart(req, res);
 };
 const updateProductQuantity = (req, res) => {
-  service.getProductFromCart(req, res);
+  service.updateProductQuantity(req, res);
 };
 const deleteProductFromCart = (req, res) => {
   service.deleteProductFromCart(req, res);
