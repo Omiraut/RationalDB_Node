@@ -15,7 +15,8 @@ app.use("/user", userRoutes);
 app.use("/product", productRoutes);
 app.use("/cart", cartRoutes);
 
-db.sequelize.sync({ force: true }).then((req) => {
+db.sequelize.sync().then((req) => {
+  // { force: true }
   app.listen(port, () => {
     console.log("server Running on port no :", port);
   });

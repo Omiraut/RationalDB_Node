@@ -64,7 +64,24 @@ const getProductFromCart = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
-const updateProductQuantity = async (req, res) => {};
+const updateProductQuantity = async (req, res) => {
+  try {
+    const cartItem = await CartItem.findOne(
+      req.params.cartId,
+      req.params.productId
+    );
+
+    if (cartItem) {
+      const updatedCartItem = await cartItem.update(req.body);
+      res.status(200).json(updatedCartItem);
+    } else {
+      console.log("Item not found with matching details");
+    }
+    // res.status(200).json(cartItem);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
 const deleteProductFromCart = async (req, res) => {};
 
 module.exports = {
