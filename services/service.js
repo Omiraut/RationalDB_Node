@@ -1,15 +1,23 @@
-const { where } = require("sequelize");
 const { User, Cart, CartItem, Product } = require("../models");
 
 const saveUser = async (req, res) => {
   try {
-    const user = await User.create(req.body);
-    res.status(201).json(user);
+    const ifExist = User.findOne({
+      where: {
+        email: req.body.email,
+      },
+    });
+    if (ifExist) {
+      res.status(200).json({ message: "Email Is Already Registered" });
+    } else {
+      const user = await User.create(req.body);
+      res.status(201).json(user);
+    }
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 };
-const getUser = async (req, res) => {
+const getUser = async (_req, res) => {
   try {
     const users = await User.findAll();
     res.json(users);
@@ -25,7 +33,7 @@ const saveProduct = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
-const getProduct = async (req, res) => {
+const getProduct = async (_req, res) => {
   try {
     const products = await Product.findAll();
     res.status(200).json(products);

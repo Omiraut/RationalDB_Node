@@ -1,31 +1,65 @@
 const service = require("../services/service");
 
 const saveUser = (req, res) => {
-  service.saveUser(req, res);
+  try {
+    service.saveUser(req, res);
+  } catch (error) {
+    console.log(error);
+  }
 };
 const getUser = (req, res) => {
-  service.getUser(req, res);
+  try {
+    service.getUser(req, res);
+  } catch (error) {
+    console.log(error);
+  }
 };
 const saveProduct = (req, res) => {
-  service.saveProduct(req, res);
+  try {
+    service.saveProduct(req, res);
+  } catch (error) {
+    console.log(error);
+  }
 };
 const getProduct = (req, res) => {
-  service.getProduct(req, res);
+  try {
+    service.getProduct(req, res);
+  } catch (error) {
+    console.log(error);
+  }
 };
 const createCart = (req, res) => {
-  service.createCart(req, res);
+  try {
+    service.createCart(req, res);
+  } catch (error) {
+    console.log(error);
+  }
 };
 const addProductToCart = (req, res) => {
-  service.addProductToCart(req, res);
+  try {
+    service.addProductToCart(req, res);
+  } catch (error) {
+    console.log(error);
+  }
 };
 const getProductFromCart = (req, res) => {
-  service.getProductFromCart(req, res);
+  try {
+    service.getProductFromCart(req, res);
+  } catch (error) {
+    console.log(error);
+  }
 };
 const updateProductQuantity = (req, res) => {
-  service.updateProductQuantity(req, res);
+  try {
+    service.updateProductQuantity(req, res);
+  } catch (error) {
+    console.log(error);
+  }
 };
 const deleteProductFromCart = (req, res) => {
-  service.deleteProductFromCart(req, res);
+  try {
+    service.deleteProductFromCart(req, res);
+  } catch (error) {}
 };
 module.exports = {
   addProductToCart,

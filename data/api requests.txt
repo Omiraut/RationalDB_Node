@@ -1,9 +1,25 @@
---POST *    http://localhost:3001/user/                                 Create User
---GET  *    http://localhost:3001/user/                                 Get Users
---POST *    http://localhost:3001/user/{id}/cart                        Create Cart for user
---POST *    http://localhost:3001/product/                              Create Product
---GET  *    http://localhost:3001/product/                              Get Product
---POST *    http://localhost:3001/cart/{cartId}/products                Add Product To Cart
---GET  *    http://localhost:3001/cart/{cartId}/products                View Cart
---PUT  *    http://localhost:3001/cart/{cartId}/products/{productId}    Update Cart
---DELETE    http://localhost:3001/cart/{cartId}/products/{productId}    delete product from cart
+--POST  *    http://localhost:3001/user/                                 Create User 
+--GET   *    http://localhost:3001/user/                                 Get Users
+--POST  *    http://localhost:3001/user/{id}/cart                        Create Cart for user
+--POST  *    http://localhost:3001/product/                              Create Product
+--GET   *    http://localhost:3001/product/                              Get Product
+--POST  *    http://localhost:3001/cart/{cartId}/products                Add Product To Cart
+--GET   *    http://localhost:3001/cart/{cartId}/products                View Cart
+--PUT   *    http://localhost:3001/cart/{cartId}/products/{productId}    Update Cart
+--DELETE*    http://localhost:3001/cart/{cartId}/products/{productId}    delete product from cart
+
+All Upper Work done complete Following List:
+
+Implement try catch in controller - DONE
+Handle Conditions which could occure in api requesting as data doesnot exist , already in cart 
+take appropriate action as per request as adding same product will triger increase quantity
+create test condition as per requests -- TRYING
+ Create User 
+ Get Users
+ Create Cart for user
+ Create Product
+ Get Product
+ Add Product To Cart
+ View Cart
+ Update Cart
+ delete product from cart
