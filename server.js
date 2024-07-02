@@ -7,7 +7,7 @@ const productRoutes = require("./routers/productRoutes");
 const cartRoutes = require("./routers/cartRoutes");
 app.use(express.json());
 
-app.get("/", (req, res) => {
+app.get("/", (_req, res) => {
   res.send("OK");
 });
 
@@ -15,7 +15,7 @@ app.use("/user", userRoutes);
 app.use("/product", productRoutes);
 app.use("/cart", cartRoutes);
 
-db.sequelize.sync().then((req) => {
+db.sequelize.sync().then((_req) => {
   // { force: true }
   app.listen(port, () => {
     console.log("server Running on port no :", port);
